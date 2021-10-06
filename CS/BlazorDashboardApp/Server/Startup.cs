@@ -27,23 +27,27 @@ namespace BlazorDashboardApp.Server {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services) {
-
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDevExpressControls();
-            services.AddMvc()
-                    .AddDefaultDashboardController(configurator => {
+            services.AddMvc();
+
+            services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
+                DashboardConfigurator configurator = new DashboardConfigurator();
+
                 // Register Dashboard Storage
                 configurator.SetDashboardStorage(new DashboardFileStorage(FileProvider.GetFileInfo("App_Data/Dashboards").PhysicalPath));
                 // Create a sample JSON data source
                 DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
-                        DashboardJsonDataSource jsonDataSourceUrl = new DashboardJsonDataSource("JSON Data Source (URL)");
-                        jsonDataSourceUrl.JsonSource = new UriJsonSource(
-                                new Uri("https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json"));
-                        jsonDataSourceUrl.RootElement = "Customers";
-                        dataSourceStorage.RegisterDataSource("jsonDataSourceUrl", jsonDataSourceUrl.SaveToXml());
-                        configurator.SetDataSourceStorage(dataSourceStorage);
-                    });
+                DashboardJsonDataSource jsonDataSourceUrl = new DashboardJsonDataSource("JSON Data Source (URL)");
+                jsonDataSourceUrl.JsonSource = new UriJsonSource(
+                        new Uri("https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json"));
+                jsonDataSourceUrl.RootElement = "Customers";
+                dataSourceStorage.RegisterDataSource("jsonDataSourceUrl", jsonDataSourceUrl.SaveToXml());
+                configurator.SetDataSourceStorage(dataSourceStorage);
+
+                return configurator;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,7 +68,7 @@ namespace BlazorDashboardApp.Server {
             app.UseRouting();
 
             app.UseEndpoints(endpoints => {
-                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard");
+                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard", "DefaultDashboard");
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
