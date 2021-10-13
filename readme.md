@@ -3,17 +3,18 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T990002)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
+
+# Dashboard for Blazor WebAssembly App - JavaScript Customization
+
+This example shows how you can customize the `DxDashboard` component with JavaScript:
+
 <!-- default file list -->
-*Files to look at*:
+## Files to Look At
 
 * [Dashboard.razor](./CS/BlazorDashboardApp/Client/Pages/Dashboard.razor)
 * [index.html](./CS/BlazorDashboardApp/Client/wwwroot/index.html)
 * [dashboard-events-scripts.js](./CS/BlazorDashboardApp/Client/wwwroot/dashboard-events-scripts.js)
 <!-- default file list end -->
-
-# Dashboard Blazor WebAssembly App - JavaScript Customization
-
-This example shows how you can customize the `DxDashboard` component with JavaScript:
 
 - The [DxJSCustomization](https://docs.devexpress.com/Dashboard/DevExpress.DashboardBlazor.DxJSCustomization?v=21.1) class provides access to the [DashboardControl](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardControl) event handlers.
 - The [onBeforeRender](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardControlOptions#js_devexpress_dashboard_dashboardcontroloptions_onbeforerender) event handler registers the custom [Parameter](https://github.com/DevExpress/dashboard-extensions/blob/master/docs/parameter-item.md) extension and removes the "New..." item from the dashboard menu.
