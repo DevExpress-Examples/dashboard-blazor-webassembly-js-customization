@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Companies" />
+  <DataSources>
+    <JsonDataSource Name="Customers" ConnectionName="jsonCustomers" RootElement="Customers" ComponentName="jsonDataSource1">
+      <Schema>
+        <Node Name="root" Type="System.Object" Selected="true" NodeType="Object">
+          <Node Name="Customers" Selected="true" NodeType="Array">
+            <Node Name="Address" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="City" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="CompanyName" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="ContactName" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="ContactTitle" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Country" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Fax" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Id" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Phone" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="PostalCode" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Region" Type="System.String" Selected="true" NodeType="Property" />
+          </Node>
+        </Node>
+      </Schema>
+    </JsonDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="Region" AllowMultiselect="true">
+      <Values>
+        <Value>SP</Value>
+        <Value>RJ</Value>
+        <Value>OR</Value>
+      </Values>
+      <DynamicListLookUpSettings DataSourceName="jsonDataSource1" ValueMember="Region" DisplayMember="Region" SortOrder="None" />
+    </Parameter>
+  </Parameters>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Companies" DataSource="jsonDataSource1" FilterString="[DataItem4] In(?Region)">
+      <DataItems>
+        <Dimension DataMember="City" DefaultId="DataItem0" />
+        <Dimension DataMember="Address" DefaultId="DataItem1" />
+        <Dimension DataMember="Phone" DefaultId="DataItem2" />
+        <Dimension DataMember="CompanyName" DefaultId="DataItem3" />
+        <Dimension DataMember="Region" DefaultId="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem4" />
+      </HiddenDimensions>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+      <ColumnFilterOptions />
+    </Grid>
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Parameters" DataSource="jsonDataSource1" CustomItemType="ParameterItem" />
+    <ListBox ComponentName="listBoxDashboardItem1" Name="City" DataSource="jsonDataSource1" FilterString="[DataItem1] In(?Region)">
+      <DataItems>
+        <Dimension DataMember="City" DefaultId="DataItem0" />
+        <Dimension DataMember="Region" DefaultId="DataItem1" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </HiddenDimensions>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical" Weight="0.4898589113516708">
+        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.6423252790646753" />
+        <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="1.3576747209353248" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="1.5101410886483293" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
