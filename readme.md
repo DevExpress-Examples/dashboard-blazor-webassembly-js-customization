@@ -12,13 +12,14 @@ This example shows how you can customize the `DxDashboard` component with JavaSc
 - The [onBeforeRender](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardControlOptions#js_devexpress_dashboard_dashboardcontroloptions_onbeforerender) event handler registers the custom [Parameter](https://github.com/DevExpress/dashboard-extensions/blob/master/docs/parameter-item.md) extension and removes the "New..." item from the dashboard menu.
 - The [onItemCaptionToolbarUpdated](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions#js_devexpress_dashboard_viewerapiextensionoptions_onitemcaptiontoolbarupdated) event handler adds a custom toolbar item to the Grid's caption.
 
-<!-- default file list -->
+![](blazor-localized-dashboard.png)
+
 ## Files to Look At
 
 * [Dashboard.razor](./CS/BlazorDashboardApp/Client/Pages/Dashboard.razor)
 * [index.html](./CS/BlazorDashboardApp/Client/wwwroot/index.html)
 * [dashboard-events-scripts.js](./CS/BlazorDashboardApp/Client/wwwroot/dashboard-events-scripts.js)
-<!-- default file list end -->
+* [parameter-item.js](./CS/BlazorDashboardApp/Client/wwwroot/parameter-item.js)
 
 ## Documentation
 
