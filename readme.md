@@ -16,10 +16,10 @@ This example shows how you can customize the `DxDashboard` component with JavaSc
 
 ## Files to Look At
 
-* [Dashboard.razor](./CS/BlazorDashboardApp/Client/Pages/Dashboard.razor)
-* [index.html](./CS/BlazorDashboardApp/Client/wwwroot/index.html)
-* [dashboard-events-scripts.js](./CS/BlazorDashboardApp/Client/wwwroot/dashboard-events-scripts.js)
-* [parameter-item.js](./CS/BlazorDashboardApp/Client/wwwroot/parameter-item.js)
+* [Dashboard.razor](./CS/BlazorDashboardApp.Client/Pages/Dashboard.razor)
+* [index.html](./CS/BlazorDashboardApp.Client/wwwroot/index.html)
+* [dashboard-events-scripts.js](./CS/BlazorDashboardApp.Client/wwwroot/dashboard-events-scripts.js)
+* [parameter-item.js](./CS/BlazorDashboardApp/BlazorDashboardApp.Client/wwwroot/parameter-item.js)
 
 ## Documentation
 
