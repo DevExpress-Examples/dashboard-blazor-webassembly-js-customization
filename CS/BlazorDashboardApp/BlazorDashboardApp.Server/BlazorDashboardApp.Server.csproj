@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="22.1.3" />
+    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="22.1.4" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.115.5" />
     
     
