@@ -40,7 +40,7 @@ app.UseDevExpressControls();
 
 app.UseRouting();
 
-EndpointRouteBuilderExtension.MapDashboardRoute(app, "api/dashboard", "DefaultDashboard");
+app.MapDashboardRoute("api/dashboard", "DefaultDashboard");
 
 app.MapRazorPages();
 app.MapControllers();
