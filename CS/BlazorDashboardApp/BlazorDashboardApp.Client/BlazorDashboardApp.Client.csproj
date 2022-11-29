@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor.Dashboard" Version="22.2.*" />
+    <PackageReference Include="DevExpress.Blazor.Dashboard" Version="22.2.2" />
     
     
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
@@ -22,5 +22,6 @@
   </ItemGroup>
 
 </Project>
+
 
 
