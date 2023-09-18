@@ -14,8 +14,7 @@ This example shows how you can customize the `DxDashboard` component with JavaSc
 
 ![](web-dashboard-blazor-js-customization.png)
 
-## Files to Look At
-
+## Files to Review
 * [Dashboard.razor](./CS/BlazorDashboardApp/BlazorDashboardApp.Client/Pages/Dashboard.razor)
 * [index.html](./CS/BlazorDashboardApp/BlazorDashboardApp.Client/wwwroot/index.html)
 * [dashboard-events-scripts.js](./CS/BlazorDashboardApp/BlazorDashboardApp.Client/wwwroot/dashboard-events-scripts.js)
