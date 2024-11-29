@@ -103,7 +103,7 @@
         }
 
         renderContent($element, changeExisting) {
-            var element = $element.get(0);
+            var element = $element.jquery ? $element.get(0) : $element;
             if (!changeExisting) {
                 while (element.firstChild)
                     element.removeChild(element.firstChild);
@@ -199,7 +199,7 @@
     }
     class ParameterItem {
         constructor(dashboardControl) {
-            this.dashboardControl = dashboardControl;     
+            this.dashboardControl = dashboardControl;
             this.dashboardControl.registerIcon(svgIcon);
             this.name = PARAMETER_EXTENSION_NAME;
             this.metaData = parameterMetadata;

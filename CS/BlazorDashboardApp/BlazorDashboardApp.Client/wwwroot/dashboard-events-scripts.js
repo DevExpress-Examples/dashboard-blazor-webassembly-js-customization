@@ -4,6 +4,11 @@
         var dashboardControl = args.component;
         dashboardControl.registerExtension(new ParameterCustomItem(dashboardControl));
         dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
+        // Register icons for a custom toolbar item.
+        DevExpress.Dashboard.ResourceManager.registerIcon('<svg id="baseCircle" class="dx-dashboard-icon" style="fill: currentColor" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="11" /></svg>');
+        DevExpress.Dashboard.ResourceManager.registerIcon('<svg id="greenCircle" class="dx-dashboard-green-icon" viewBox="0 0 24 24" width="48" height="48"><circle cx="12" cy="12" r="11" /></svg>');
+        DevExpress.Dashboard.ResourceManager.registerIcon('<svg id="yellowCircle" class="dx-dashboard-yellow-icon" viewBox="0 0 24 24" width="48" height="48"><circle cx="12" cy="12" r="11" /></svg>');
+        DevExpress.Dashboard.ResourceManager.registerIcon('<svg id="redCircle" class="dx-dashboard-red-icon" viewBox="0 0 24 24" width="48" height="48"><circle cx="12" cy="12" r="11" /></svg>');
 
         // Removes the "New..." menu item from the dashboard menu.
         var toolbox = dashboardControl.findExtension('toolbox');
